@@ -7,12 +7,12 @@ This is a guide for Installing and Configuring QEMU Guest Agent for TrueNAS 13. 
 Due to the TrueNAS kernel lacking certain FreeBSD drivers, it's necessary to download the FreeBSD 13 kernel, extract the VirtIO Console driver and integrate it into the TrueNAS system. This ensures TrueNAS compatibility with virtualized environments.
 
 Required packages for this guide:
-- VirtIO Console driver: https://man.freebsd.org/cgi/man.cgi?query=virtio_console
-- QEMU Guest Agent: https://freebsd.pkgs.org/13/freebsd-amd64/qemu-guest-agent-8.1.3.pkg.html
+- VirtIO Console driver: [Man Page](https://man.freebsd.org/cgi/man.cgi?query=virtio_console)
+- QEMU Guest Agent: [Man Page](https://freebsd.pkgs.org/13/freebsd-amd64/qemu-guest-agent-8.1.3.pkg.html)
 
 FreeBSD 13 Binary Packages:
-- FreeBSD 13.1 Kernel: http://ftp-archive.freebsd.org/pub/FreeBSD-Archive/old-releases/amd64/13.1-RELEASE/kernel.txz
-- QEMU Guest Agent 8.1.3: https://pkg.freebsd.org/FreeBSD:13:amd64/latest/All/qemu-guest-agent-8.1.3.pkg
+- FreeBSD 13.1 Kernel: [Package](http://ftp-archive.freebsd.org/pub/FreeBSD-Archive/old-releases/amd64/13.1-RELEASE/kernel.txz)
+- QEMU Guest Agent 8.1.3: [Package](https://pkg.freebsd.org/FreeBSD:13:amd64/latest/All/qemu-guest-agent-8.1.3.pkg)
 
 ## Manual Installation
 
