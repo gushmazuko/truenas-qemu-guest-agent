@@ -30,15 +30,15 @@ cp /usr/local/etc/rc.d/qemu-guest-agent ${qga_backup_dir}/
 export TERM=dumb
 
 # Create tunables for QEMU Guest Agent
-echo -e "\nCreating tunables for QEUM Guest Agent..."
+echo -e "\nCreating tunables for QEMU Guest Agent..."
 cli << EOF &> /dev/null
     system tunable create type=RC var="qemu_guest_agent_enable" value="YES" enabled=true
     system tunable create type=RC var="qemu_guest_agent_flags" value="-d -v -l /var/log/qemu-ga.log" enabled=true
     system tunable create type=LOADER var="virtio_console_load" value="YES" enabled=true
 EOF
 
-# Set un init/shutdown scripts for QEUM Guest Agent
-echo -e "\nSetting init/shutdown scripts for QEUM Guest Agent..."
+# Set un init/shutdown scripts for QEMU Guest Agent
+echo -e "\nSetting init/shutdown scripts for QEMU Guest Agent..."
 cli << EOF &> /dev/null
     system initshutdownscript create type=COMMAND command="service qemu-guest-agent start" when=POSTINIT enabled=true timeout=10 comment="start qemu-guest-agent on boot"
     system initshutdownscript create type=COMMAND command="cp ${qga_backup_dir}/qemu-guest-agent /usr/local/etc/rc.d" when=PREINIT enabled=true timeout=10 comment="copy qemu-guest-agent on boot"
