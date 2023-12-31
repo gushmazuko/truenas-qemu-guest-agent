@@ -17,7 +17,7 @@ curl -#O ${freebsd13_kernel} --output-dir /tmp/
 tar -xf /tmp/kernel.txz --strip-components=3 -C /boot/modules/ ./boot/kernel/virtio_console.ko 1> /dev/null
 
 # Load virtio_console.ko driver
-kldload /boot/modules/virtio_console.ko
+kldload -n /boot/modules/virtio_console.ko
 
 # Download and install FreeBSD 13 qemu-guest-agent package
 echo -e "\nDownloading and installing FreeBSD 13 qemu-guest-agent package..."
