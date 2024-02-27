@@ -8,7 +8,7 @@ trap 'echo "An error occurred. Exiting..." >&2' ERR
 
 # Variables
 freebsd13_kernel="http://ftp-archive.freebsd.org/pub/FreeBSD-Archive/old-releases/amd64/13.1-RELEASE/kernel.txz"
-freebsd13_qga_pkg="https://pkg.freebsd.org/FreeBSD:13:amd64/latest/All/qemu-guest-agent-8.1.3.pkg"
+freebsd13_qga_pkg="https://pkg.freebsd.org/FreeBSD:13:amd64/latest/All/qemu-guest-agent-8.2.1.pkg"
 qga_backup_dir="/root/qga_backup"
 
 # Download FreeBSD 13.1 kernel.txz and extract virtio_console.ko driver to /boot/kernel
@@ -17,7 +17,7 @@ curl -#O ${freebsd13_kernel} --output-dir /tmp/
 tar -xf /tmp/kernel.txz --strip-components=3 -C /boot/modules/ ./boot/kernel/virtio_console.ko 1> /dev/null
 
 # Load virtio_console.ko driver
-kldload /boot/modules/virtio_console.ko
+kldload -n /boot/modules/virtio_console.ko
 
 # Download and install FreeBSD 13 qemu-guest-agent package
 echo -e "\nDownloading and installing FreeBSD 13 qemu-guest-agent package..."
