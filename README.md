@@ -2,7 +2,29 @@
 
 This is a guide for Installing and Configuring QEMU Guest Agent for TrueNAS 13. It is based on the **QEMU Guest Agent** and **VirtIO Console driver** from **FreeBSD 13**.
 
-## Requirements
+## Automated Installation
+
+Via bash script:
+
+1. Execute the following commands on your TrueNAS system:
+    ```bash
+    curl -O https://raw.githubusercontent.com/gushmazuko/truenas-qemu-guest-agent/master/install.sh && chmod +x install.sh && ./install.sh
+    ```
+
+2. Reboot TrueNAS to apply changes.
+
+Or via ansible:
+
+1. Execute ansible-playbook on your TrueNAS system:
+    ```bash
+    ansible-playbook ./install_qemu_guest_agent_on_truenas.yml \
+    -e working_host=truenas.example.com \
+    -e ansible_ssh_port=22
+    ```
+
+2. Reboot TrueNAS to apply changes.
+
+## Requirements for Manual Installation
 
 Due to the TrueNAS kernel lacking certain FreeBSD drivers, it's necessary to download the FreeBSD 13 kernel, extract the VirtIO Console driver and integrate it into the TrueNAS system. This ensures TrueNAS compatibility with virtualized environments.
 
@@ -12,7 +34,7 @@ Required packages for this guide:
 
 FreeBSD 13 Binary Packages:
 - FreeBSD 13.1 Kernel: [Package](http://ftp-archive.freebsd.org/pub/FreeBSD-Archive/old-releases/amd64/13.1-RELEASE/kernel.txz)
-- QEMU Guest Agent 8.1.3: [Package](https://pkg.freebsd.org/FreeBSD:13:amd64/latest/All/qemu-guest-agent-8.1.3.pkg)
+- QEMU Guest Agent 8.2.1: [Package](https://pkg.freebsd.org/FreeBSD:13:amd64/latest/All/qemu-guest-agent-8.2.1.pkg)
 
 ## Manual Installation
 
@@ -39,30 +61,6 @@ FreeBSD 13 Binary Packages:
     2. Type: `Command`, Command: `cp /root/qga_backup/qemu-guest-agent /usr/local/etc/rc.d`, When: `PREINIT`, Enabled: `yes`, Timeout: `10`
 
 8. Reboot TrueNAS to apply changes.
-
-## Automated Installation
-
-Via bash script:
-
-1. Execute the following commands on your TrueNAS system:
-    ```bash
-    curl -O https://raw.githubusercontent.com/gushmazuko/truenas-qemu-guest-agent/master/install.sh
-    chmod +x install.sh
-    ./install.sh
-    ```
-
-2. Reboot TrueNAS to apply changes.
-
-Or via ansible:
-
-1. Execute ansible-playbook on your TrueNAS system:
-    ```bash
-    ansible-playbook ./install_qemu_guest_agent_on_truenas.yml \
-    -e working_host=truenas.example.com \
-    -e ansible_ssh_port=22
-    ```
-
-2. Reboot TrueNAS to apply changes.
 
 ## Conclusion
 Following these steps ensures the successful installation and configuration of the `QEMU Guest Agent` on TrueNAS 13, improving its functionality in virtualized environments.
