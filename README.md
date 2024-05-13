@@ -12,7 +12,8 @@ Required packages for this guide:
 
 FreeBSD 13 Binary Packages:
 - FreeBSD 13.1 Kernel: [Package](http://ftp-archive.freebsd.org/pub/FreeBSD-Archive/old-releases/amd64/13.1-RELEASE/kernel.txz)
-- QEMU Guest Agent 8.1.3: [Package](https://pkg.freebsd.org/FreeBSD:13:amd64/latest/All/qemu-guest-agent-8.1.3.pkg)
+- QEMU Guest Agent: [Package](https://pkg.freebsd.org/FreeBSD:13:amd64/latest/All/qemu-guest-agent-9.0.0.pkg)
+  - If the link is dead, replace the package version in the url with the latest one found here: [Package](https://ports.freebsd.org/cgi/ports.cgi?query=qemu-guest-agent&stype=all&sektion=all)
 
 ## Manual Installation
 
