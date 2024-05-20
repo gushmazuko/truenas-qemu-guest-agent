@@ -8,11 +8,11 @@ Due to the TrueNAS kernel lacking certain FreeBSD drivers, it's necessary to dow
 
 Required packages for this guide:
 - VirtIO Console driver: [Man Page](https://man.freebsd.org/cgi/man.cgi?query=virtio_console)
-- QEMU Guest Agent: [Man Page](https://freebsd.pkgs.org/13/freebsd-amd64/qemu-guest-agent-8.1.3.pkg.html)
+- QEMU Guest Agent: [Man Page](https://freebsd.pkgs.org/13/freebsd-amd64/qemu-guest-agent-9.0.0.pkg.html)
 
 FreeBSD 13 Binary Packages:
 - FreeBSD 13.1 Kernel: [Package](http://ftp-archive.freebsd.org/pub/FreeBSD-Archive/old-releases/amd64/13.1-RELEASE/kernel.txz)
-- QEMU Guest Agent 8.1.3: [Package](https://pkg.freebsd.org/FreeBSD:13:amd64/latest/All/qemu-guest-agent-8.1.3.pkg)
+- QEMU Guest Agent 9.0.0: [Package](https://pkg.freebsd.org/FreeBSD:13:amd64/latest/All/qemu-guest-agent-9.0.0.pkg)
 
 ## Manual Installation
 
